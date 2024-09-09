@@ -1,2 +1,21 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿double totalSandwichCost = 0;
+double totalToppingCost = 0;
+double baseCost = 0;
+double orderCost = 0;
+const double COST_OF_SANDWICH = 4.75;
+const double COST_OF_TOPPING = 0.55;
+const double DISCOUNT_AMOUNT = 0.10;
+int numberOfSandwiches = 0;
+int numberOfToppings = 0;
+double tips = 0;
+Console.WriteLine("Welcome to Sherlenthia's Sandwich Shop! How many Sandwiches would you like?");
+numberOfSandwiches = int.Parse(Console.ReadLine());
+Console.WriteLine("Alright, and how many toppings would you like?");
+numberOfToppings = int.Parse(Console.ReadLine());
+Console.WriteLine("How much of a tip would you like to leave?");
+tips = double.Parse(Console.ReadLine());
+totalSandwichCost = COST_OF_SANDWICH * numberOfSandwiches;
+totalToppingCost = COST_OF_TOPPING * numberOfToppings;
+baseCost= totalSandwichCost+ totalToppingCost;
+orderCost = tips + baseCost * (1-DISCOUNT_AMOUNT);
+Console.WriteLine("Your total today is: $"+orderCost);
